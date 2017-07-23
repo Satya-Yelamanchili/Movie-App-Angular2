@@ -1,0 +1,16 @@
+<div *ngFor="let item of data" style="display: inline-block;margin-left: 10px;border-color: red">
+  <a href="tv/{{ item.id }}" title="{{ item.name }}">
+    <div>
+      <img src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ item.backdrop_path }}" />
+    </div>
+  </a>
+  <div class="title">
+    <a href="tv/{{ item.id }}" title="{{ item.name }}">
+      {{ item.name }}
+    </a>
+     test <span class="icon icon-star-full"></span>
+  </div>
+  <div class="genre">
+  Genre: {{ getGenreNamebyID(item.genre_ids) }}
+  </div>
+</div>
