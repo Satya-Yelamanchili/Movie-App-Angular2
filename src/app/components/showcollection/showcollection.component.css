@@ -24,3 +24,10 @@
     padding-right: 20px;
     text-decoration: none;
 }
+.vote{
+    text-align: right;
+        padding-top: 0;
+    margin-right: 0;
+    display: inline-flex;
+    align-items: center;
+}

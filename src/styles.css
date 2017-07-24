@@ -32,7 +32,6 @@
 }
 .icon-calendar:before {
   content: "\e953";
-    font-size: 30px;
   text-decoration-line: none;
 }
 .icon-star-full:before {

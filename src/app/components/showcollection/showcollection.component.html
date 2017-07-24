@@ -5,12 +5,13 @@
     </div>
   </a>
   <div class="title">
-    <a href="tv/{{ item.id }}" title="{{ item.name }}">
+    <a href="tv/{{ item.id }}" title="{{ item.name }}" style="display: inline-block  ">
       {{ item.name }}
     </a>
-     test <span class="icon icon-star-full"></span>
+    <p class="vote"> 
+     {{ item.vote_average }} <span class="icon icon-star-full"></span></p>
   </div>
   <div class="genre">
-  Genre: {{ getGenreNamebyID(item.genre_ids) }}
-  </div>
+  {{ getGenreNamebyID(item.genre_ids) }}
+  {{ item.first_air_date | date:'y'}} <span class="icon icon-calendar"></span>
 </div>
