@@ -2,13 +2,14 @@ import { DatePipe} from '@angular/common';
 import { Component, OnInit, Input } from '@angular/core';
 import { GenreService } from '../../services/genre.service';
 import { Genre } from '../../models/genre';
+import { Tv } from '../../models/tv';
 @Component({
   selector: 'app-showcollection',
   templateUrl: './showcollection.component.html',
   styleUrls: ['./showcollection.component.css']
 })
 export class ShowcollectionComponent implements OnInit {
- @Input() data: string;
+ @Input() data: Tv[];
 tvGenres: Genre[];
 showGenre: string[];
   constructor(private genreService: GenreService ) {}

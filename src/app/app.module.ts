@@ -2,8 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA,  } from '@angular/core';
 
 import { MoviesService } from './services/movies.service';
 import { GenreService } from './services/genre.service';
@@ -22,6 +21,9 @@ import { PopularmoviesComponent } from './components/popularmovies/popularmovies
 import { MovieinfoComponent } from './components/movieinfo/movieinfo.component';
 import { ShowinfoComponent } from './components/showinfo/showinfo.component';
 import { ShowcollectionComponent } from './components/showcollection/showcollection.component';
+import { TabComponent } from './common/tab/tab.component';
+import { TabsDirective } from './common/tabs.directive';
+import { TabsComponent } from './common/tabs/tabs.component';
 
 const approutes: Routes = [
   { path: 'popularmovies', component: PopularmoviesComponent },
@@ -48,7 +50,10 @@ const approutes: Routes = [
     PopularmoviesComponent,
     MovieinfoComponent,
     ShowinfoComponent,
-    ShowcollectionComponent
+    ShowcollectionComponent,
+    TabComponent,
+    TabsDirective,
+    TabsComponent,
   ],
   imports: [
     BrowserModule,
