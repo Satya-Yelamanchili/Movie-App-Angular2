@@ -24,6 +24,7 @@ import { ShowcollectionComponent } from './components/showcollection/showcollect
 import { TabComponent } from './common/tab/tab.component';
 import { TabsDirective } from './common/tabs.directive';
 import { TabsComponent } from './common/tabs/tabs.component';
+import { SeasoninfoComponent } from './components/seasoninfo/seasoninfo.component';
 
 const approutes: Routes = [
   { path: 'popularmovies', component: PopularmoviesComponent },
@@ -35,6 +36,7 @@ const approutes: Routes = [
   { path: 'tv/top-rated', component: TopratedshowsComponent },
   { path: 'tv/airing-today', component: TodaysshowsComponent },
   { path: 'tv/:id', component: ShowinfoComponent},
+  { path: 'tv/:id/season/:season', component: SeasoninfoComponent}
 ];
 
 @NgModule({
@@ -54,6 +56,7 @@ const approutes: Routes = [
     TabComponent,
     TabsDirective,
     TabsComponent,
+    SeasoninfoComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Genre } from './genre';
+import { Season } from './season';
 export class Show {
 public backdrop_path: string;
 public episode_run_time: number[];
@@ -22,8 +23,9 @@ public status: string;
 public type: string;
 public vote_average: number;
 public vote_count: number;
+public seasons: Season[];
 }
 // public created_by array[object]
 // public production_companies: array[object]
-// public seasons: array[object]
+// 
 // public networks: array[object]

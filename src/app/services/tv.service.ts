@@ -47,4 +47,9 @@ export class TvService {
     this.tvUrl = Constants.baseApiUrl + Constants.showInfo.replace('{tv_id}', showId.toString()) + Constants.apiKey;
     return this.http.get(this.tvUrl).map(res => res.json());
   }
+
+  getShowExternalId(showId: number) {
+    this.tvUrl = Constants.baseApiUrl + Constants.showIds.replace('{tv_id}', showId.toString()) + Constants.apiKey;
+    return this.http.get(this.tvUrl).map(res => res.json());
+  }
 }
