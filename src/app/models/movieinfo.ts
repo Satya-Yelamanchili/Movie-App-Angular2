@@ -22,4 +22,4 @@ export class MovieInfo {
     public vote_average: number;
     public vote_count: number;
 // tslint:disable-next-line:eofline
-};
+}

@@ -1,6 +1,6 @@
 
 .meta{
-    visibility: hidden;
+    visibility: visible;
     background-color: rgba(255,255,255,0.9);
     position: relative;
     top: -40px;
@@ -20,7 +20,7 @@
         white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    display: inline-block;
+    
     padding-right: 20px;
     text-decoration: none;
 }
@@ -30,4 +30,24 @@
     margin-right: 0;
     display: inline-flex;
     align-items: center;
+}
+.dropdown {
+        text-align: right;
+    margin-bottom: 20px;
+}
+.overview {
+    height: 190px;
+        word-wrap: break-word;
+    white-space: normal;
+    color: #4d4d4d;
+    font-size: 0.9em;
+    line-height: 1.2em;
+    margin-top: 10px;
+}
+.info {
+    height: 278px;
+    width: 270px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 10px 16px 16px 16px;
 }

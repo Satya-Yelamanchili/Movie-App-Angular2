@@ -11,11 +11,21 @@ import { Tv } from '../../models/tv';
 export class ShowcollectionComponent implements OnInit {
  @Input() data: Tv[];
 tvGenres: Genre[];
+selectedValue: number;
 showGenre: string[];
+show: string;
   constructor(private genreService: GenreService ) {}
 
   ngOnInit() {
+    if (localStorage.getItem('tvViewSelection') !== null) {
+      this.selectedValue = parseInt(localStorage.getItem('tvViewSelection'), 10);
+    } else {
+      this.selectedValue = 1;
+    }
     this.getGenres();
+  }
+  onChange(selectedValue: number) {
+    localStorage.setItem('tvViewSelection', selectedValue.toString());
   }
 
   getGenreNamebyID(ids: number[]) {

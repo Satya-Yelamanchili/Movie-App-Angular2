@@ -18,5 +18,8 @@ export class GenreService {
     this.tvUrl = Constants.baseApiUrl + Constants.tvGenres + Constants.apiKey;
     return this.http.get(this.tvUrl).map(res => res.json());
   }
-
+getShowInfo(showId: number) {
+    this.tvUrl = Constants.baseApiUrl + Constants.showInfo.replace('{tv_id}', showId.toString()) + Constants.apiKey;
+    return this.http.get(this.tvUrl).map(res => res.json());
+  }
 }

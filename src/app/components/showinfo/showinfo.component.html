@@ -9,9 +9,18 @@
       <div>
         <a href="{{ showInfo?.homepage }}" target="_blank" class="inlineLink">
           <h2>
-            {{ showInfo?.name}} ( {{ showInfo?.first_air_date | date:"yyyy" }} )
+            {{ showInfo?.name}} ( {{ showInfo?.first_air_date | date:"yyyy" }} ) 
           </h2>
         </a>
+        <div>
+        <md-progress-spinner *ngIf="showInfo"
+        class="example-margin"
+        [mode]="mode"
+        value="{{ showInfo.vote_average * 10 }}">
+    </md-progress-spinner> 
+      <span> User Score </span>
+      </div>
+      
       </div>
       <p>Genre: <span *ngFor="let item of  showInfo?.genres; let islast = last">{{ item?.name }} {{ islast ? "" : ", "}} </span></p>
       <p> OverView: {{ showInfo?.overview }}</p>
@@ -19,19 +28,24 @@
   </ul>
 </div>
 
-Seasons:
-<div style="margin-bottom: 30px" *ngFor="let season of showInfo?.seasons">
-  <a href="tv/{{ showInfo?.id }}/season/{{ season.season_number }}">
-  <img src="https://image.tmdb.org/t/p/w130_and_h195_bestv2{{season.poster_path}}" />
-  </a>
-  <div style="display:inline-block;">        
-        <h2> {{ season.season_number == 0 ? "Special": "Season " +  season.season_number }} </h2> 
-        <h4> {{season.air_date | date:'y'}} | {{season.episode_count}} episodes </h4>
-        Season {{season.season_number}} of The Walking Dead premiered on {{season.air_date}}.
-    </div>   
-  </div>
-
-Similar Shows:
+<md-tab-group class="nav nav-tabs">
+  <md-tab label="Seasons" class="active">
+    <div style="margin-bottom: 30px" *ngFor="let season of showInfo?.seasons">
+      <md-card>
+        <a href="tv/{{ showInfo?.id }}/season/{{ season.season_number }}">
+          <img src="https://image.tmdb.org/t/p/w130_and_h195_bestv2{{season.poster_path}}" />
+        </a>
+        <div style="display:inline-block;">
+          <h2> {{ season.season_number == 0 ? "Special": "Season " + season.season_number }} </h2>
+          <h4> {{season.air_date | date:'y'}} | {{season.episode_count}} episodes </h4>
+          Season {{season.season_number}} of The Walking Dead premiered on {{season.air_date}}.
+        </div>
+      </md-card>
+    </div>
+  </md-tab>
+  <md-tab label="Similar Shows" class="tab-content">
     <div>
       <app-showcollection [data]='similarShows'></app-showcollection>
     </div>
+  </md-tab>
+</md-tab-group>

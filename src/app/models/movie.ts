@@ -15,5 +15,4 @@ export class Movie {
     public vote_average: number,
 public character: string) {
     }
-    
-};
+}

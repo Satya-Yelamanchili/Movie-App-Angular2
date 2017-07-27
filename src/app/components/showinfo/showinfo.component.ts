@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TvService } from '../../services/tv.service';
+import { GenreService } from '../../services/genre.service';
 import { ActivatedRoute } from '@angular/router';
 import { Show } from '../../models/show';
 import { Tv } from '../../models/tv';
@@ -13,7 +14,8 @@ export class ShowinfoComponent implements OnInit {
   showId: number;
   showInfo: Show;
   similarShows: Tv[];
-  constructor(private tvService: TvService, private routes: ActivatedRoute) { }
+  mode: 'intermediate';
+  constructor(private tvService: TvService, private routes: ActivatedRoute, private genreService: GenreService) { }
 
   ngOnInit() {
     this.getShowId();
@@ -26,7 +28,7 @@ export class ShowinfoComponent implements OnInit {
     });
   }
   getShowInfo() {
-    this.tvService.getShowInfo(this.showId).subscribe(res => {
+    this.genreService.getShowInfo(this.showId).subscribe(res => {
       this.showInfo = res;
     });
   }

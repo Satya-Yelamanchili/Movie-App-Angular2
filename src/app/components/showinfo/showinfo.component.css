@@ -6,3 +6,14 @@
     flex-wrap: wrap;
     align-items: center;
 }
+
+#mat-ink-bar{
+    background-color: #f44336;
+}
+.example-margin{
+    width:50px;
+    height:50px;
+}
+.mat-progress-spinner path, .mat-spinner path {
+    stroke: red;
+}

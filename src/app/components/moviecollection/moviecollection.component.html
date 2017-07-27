@@ -11,14 +11,14 @@
     <md-card style="padding: 0px; margin:10px">
       <div style="display: flex;">
         <div>
-          <a href="tv/{{ item.id }}" title="{{ item.name }}">
+          <a href="movie/{{ item.id }}" title="{{ item.title }}">
           <img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ item.poster_path }}">
       </a>
         </div>
         <div class="info">
           <div>
             <a href="movieinfo/{{item.id}}">
-          {{ item.name}}
+          {{ item.title}}
         </a> {{ item.popularity }}
           </div>
           <div style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"> Genre : {{ getGenreNamebyID(item.genre_ids) }}</div>
@@ -34,12 +34,12 @@
   <div *ngFor="let item of data" style="margin:10px; display: inline-block;">
     <md-card style="padding: 0px">
       <div>
-        <a href="tv/{{ item.id }}" title="{{ item.name }}">
+        <a href="movie/{{ item.id }}" title="{{ item.title }}">
           <img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ item.poster_path }}">
         </a>
       </div>
       <div>
-        <a href="tv/{{ item.id }}" title="{{ item.name }}">{{ item.name}}</a>
+        <a href="movie/{{ item.id }}" title="{{ item.title }}">{{ item.title}}</a>
       </div>
     </md-card>
   </div>
@@ -48,14 +48,14 @@
 <div *ngIf="selectedValue == 3">
   <div *ngFor="let item of data" style="display: inline-block;margin-left: 10px;border-color: red">
     <md-card style="padding:0px; margin:10px;">
-      <a href="tv/{{ item.id }}" title="{{ item.name }}">
+      <a href="movie/{{ item.id }}" title="{{ item.title }}">
         <div>
           <img src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ item.backdrop_path }}" />
         </div>
       </a>
       <div class="title">
         <div style="float: left;">
-          <a href="tv/{{ item.id }}" title="{{ item.name }}"> {{ item.name }}  </a>
+          <a href="movie/{{ item.id }}" title="{{ item.title }}"> {{ item.title }}  </a>
         </div>
         <div style="float: right;">
           {{ item.vote_average }}
@@ -65,7 +65,7 @@
       <div class="title">
         <div class="genre">
           <div style="float: left;">{{ getGenreNamebyID(item.genre_ids) }}</div>
-          <div style="float: right;"> {{ item.first_air_date | date:'y'}} <span class="icon icon-calendar"></span></div>
+          <div style="float: right;"> {{ item.release_date}} <span class="icon icon-calendar"></span></div>
         </div>
       </div>
     </md-card>

@@ -9,7 +9,6 @@ import { Tv } from '../../models/tv';
   styleUrls: ['./todaysshows.component.css']
 })
 export class TodaysshowsComponent implements OnInit {
-
   shows: Tv[];
   constructor(private tvService: TvService) { }
 

@@ -3,6 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA,  } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MdTabsModule, MdCardModule, MdProgressSpinnerModule, MdSelectModule} from '@angular/material';
+import 'hammerjs';
 
 import { MoviesService } from './services/movies.service';
 import { GenreService } from './services/genre.service';
@@ -25,10 +28,18 @@ import { TabComponent } from './common/tab/tab.component';
 import { TabsDirective } from './common/tabs.directive';
 import { TabsComponent } from './common/tabs/tabs.component';
 import { SeasoninfoComponent } from './components/seasoninfo/seasoninfo.component';
+import { MouseoverimageDirective } from './directives/mouseoverimage.directive';
+import { UpcomingmoviesComponent } from './components/upcomingmovies/upcomingmovies.component';
+import { NowplayingmoviesComponent } from './components/nowplayingmovies/nowplayingmovies.component';
+import { TopratedmoviesComponent } from './components/topratedmovies/topratedmovies.component';
+import { MoviecollectionComponent } from './components/moviecollection/moviecollection.component';
 
 const approutes: Routes = [
-  { path: 'popularmovies', component: PopularmoviesComponent },
-  { path: 'movieinfo/:id', component: MovieinfoComponent },
+  { path: 'movie', component: PopularmoviesComponent },
+  { path: 'movie/upcoming', component: UpcomingmoviesComponent },
+  { path: 'movie/nowplaying', component: NowplayingmoviesComponent },
+  { path: 'movie/toprated', component: TopratedmoviesComponent },
+  { path: 'movie/:id', component: MovieinfoComponent },
   { path: 'people/:id', component: PeopleComponent },
   { path: 'personinfo/:id', component: PersoninfoComponent },
   { path: 'tv', component: PopularshowsComponent },
@@ -57,11 +68,21 @@ const approutes: Routes = [
     TabsDirective,
     TabsComponent,
     SeasoninfoComponent,
+    MouseoverimageDirective,
+    UpcomingmoviesComponent,
+    NowplayingmoviesComponent,
+    TopratedmoviesComponent,
+    MoviecollectionComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    BrowserAnimationsModule,
+    MdTabsModule,
+    MdSelectModule,
+    MdCardModule,
+    MdProgressSpinnerModule,
     RouterModule.forRoot(approutes),
   ],
   exports: [
