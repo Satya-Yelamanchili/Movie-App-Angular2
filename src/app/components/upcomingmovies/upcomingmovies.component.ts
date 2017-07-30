@@ -13,6 +13,13 @@ export class UpcomingmoviesComponent implements OnInit {
   constructor(private movieService: MoviesService) { }
 
   ngOnInit() {
+    this.getUpComingMovies(1);
+  }
+
+  getUpComingMovies(pageNumber: number) {
+    this.movieService.upComingMovies(pageNumber).subscribe(res => {
+        this.movies = res.results;
+      });
   }
 
 }

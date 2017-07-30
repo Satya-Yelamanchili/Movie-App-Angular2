@@ -1,3 +1,69 @@
-<p>
-  movieinfo works!
-</p>
+<div *ngIf="movieInfo">
+  <ul style="display: flex;">
+    <div>
+      <a href="{{ movieInfo.homepage }}">
+        <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{movieInfo.poster_path}}" />
+      </a>
+    </div>
+    <div style="margin-left: 30px">
+      <div>
+        <a href="{{ movieInfo.homepage }}" target="_blank" class="inlineLink">
+          <h2>
+            {{ movieInfo.title}} ( {{ movieInfo.release_date | date:"yyyy" }} )
+          </h2>
+        </a>
+        <a href="http://www.imdb.com/title/{{movieInfo.imdb_id}}/" target="_blank" class="icon icon-imdb" style="display: inline-block; text-decoration: none;"></a>
+      </div>
+      <button (click)="openDialog()">Trailer</button>
+      <p>Genre: <span *ngFor="let item of  movieInfo.genres; let islast = last">{{ item.name }} {{ islast ? "" : ", "}} </span></p>
+      <p>Revenue: {{ movieInfo.revenue | currency:"USD":true}} Globally</p>
+      <p> OverView: {{ movieInfo.overview }}</p>
+    </div>
+  </ul>
+</div>
+
+<div style="overflow: hidden">
+  <div style="width:85%; " >
+  <md-tab-group class="nav nav-tabs"> 
+    <md-tab label="Movie Cast">
+      <div>
+        <ul *ngFor="let item of cast" class="img-thumbnail" style="border: 10px">
+          <a href="personinfo/{{item.id}}">
+                <img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ item.profile_path }}">
+                </a>
+          <p><strong>{{item.name}}</strong></p>
+          <p> {{item.job}} </p>
+        </ul>
+      </div>
+    </md-tab>
+    <md-tab label="Movie Crew">
+      <div>
+        <ul *ngFor="let item of crew" class="img-thumbnail" style="border: 10px">
+          <a href="personinfo/{{item.id}}">
+                <img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ item.profile_path }}">
+                </a>
+          <p><strong>{{item.name}}</strong></p>
+          <p> {{item.job}} </p>
+        </ul>
+      </div>
+    </md-tab>
+    <md-tab label="Videos" class="tab-content">
+      <div *ngFor="let item of videos" class="videoInline">
+        <iframe [src]='getSafeUrl(item.key)' frameborder="0" allowfullscreen width="400px" height="250px"></iframe>
+      </div>
+    </md-tab>
+  </md-tab-group>
+  </div>
+  <div style="width:15%; border:5px"> 
+      <div *ngIf="movieInfo">
+        Run Time: <p> {{ movieInfo.runtime }}</p>     
+        Production Companies:    
+        <li *ngFor="let item of movieInfo.production_companies">
+          <a href="company/{{ item.id }}" >{{ item.name }} </a>
+        </li>     
+        Key Words:
+             <li *ngFor="let item of keyWords">{{ item.name }}
+        </li>
+      </div>
+  </div>
+</div>

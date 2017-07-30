@@ -7,4 +7,6 @@ export class Crew {
     public name: string;
     public order: number;
     public profile_path: string;
+    public job: string;
+    public department: string;
 }

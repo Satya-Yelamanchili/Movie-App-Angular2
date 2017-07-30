@@ -32,7 +32,7 @@ export class MoviecollectionComponent implements OnInit {
     getGenreNamebyID(ids: number[]) {
     this.movieGenre = [];
     ids.forEach((x) => {
-      if (this.allGenres.find((res) => res.id === x) !== undefined) {
+      if (this.allGenres !== undefined && this.allGenres.find((res) => res.id === x) !== undefined) {
         this.movieGenre.push(this.allGenres.find((res) => res.id === x).name);
       }
     });

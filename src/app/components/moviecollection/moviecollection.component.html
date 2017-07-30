@@ -16,16 +16,15 @@
       </a>
         </div>
         <div class="info">
-          <div>
-            <a href="movieinfo/{{item.id}}">
+          <div style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+            <a href="movieinfo/{{item.id}}" style="width:80%" >
           {{ item.title}}
-        </a> {{ item.popularity }}
+        </a> {{ item.vote_average }}
           </div>
-          <div style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"> Genre : {{ getGenreNamebyID(item.genre_ids) }}</div>
+          <div style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"> {{ getGenreNamebyID(item.genre_ids) }}</div>
           <div class="overview"> {{ item.overview }}</div>
         </div>
       </div>
-      <div> MoreInfo</div>
     </md-card>
   </div>
 </div>
@@ -59,7 +58,7 @@
         </div>
         <div style="float: right;">
           {{ item.vote_average }}
-          <p class="icon icon-star-full"></p>
+          <span class="icon icon-star-full"></span>
         </div>
       </div>
       <div class="title">

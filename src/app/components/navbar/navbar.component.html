@@ -10,12 +10,12 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right" style="text-transform: uppercase;">
         <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{active:true}">
           <a class="page-scroll" [routerLink]="['/']">Home</a>
         </li>
         <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{active:true}">
-          <a class="page-scroll" [routerLink]="['/movies']">Movies</a>
+          <a class="page-scroll" [routerLink]="['/movie']">Movies</a>
         </li>
         <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{active:true}">
           <a class="page-scroll" [routerLink]="['/tv']">TV</a>
@@ -23,7 +23,6 @@
         <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{active:true}">
           <a class="page-scroll" [routerLink]="['/people']">People</a>
         </li>
-
       </ul>
     </div>
     <!-- /.navbar-collapse -->

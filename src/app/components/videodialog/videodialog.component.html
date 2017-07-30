@@ -1,0 +1,6 @@
+<div style="width:100%; height: 5%">
+  Movie Trailer
+</div>
+<div style="width:100%; height: 95%">
+  <iframe *ngIf="data" [src]='getSafeUrl(data)' frameborder="0" allowfullscreen width="100%" height="100%"></iframe>
+  </div>

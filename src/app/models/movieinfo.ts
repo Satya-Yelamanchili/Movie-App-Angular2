@@ -1,4 +1,5 @@
 import { Genre } from './genre';
+import { Companies } from './companies';
 export class MovieInfo {
     public adult: boolean;
     public genres: Genre[];
@@ -21,5 +22,6 @@ export class MovieInfo {
     public video: boolean;
     public vote_average: number;
     public vote_count: number;
+    public production_companies: Companies[];
 // tslint:disable-next-line:eofline
 }
